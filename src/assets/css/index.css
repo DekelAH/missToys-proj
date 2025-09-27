@@ -1,0 +1,50 @@
+/* Components */
+
+@import './cmps/AppFooter.css';
+@import './cmps/AppHeader.css';
+
+* {
+
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto 100%;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    gap: 5px;
+}
+
+.app-header-section {
+
+    grid-area: "header";
+}
+
+.main-section {
+
+    grid-area: "main";
+    background-color: bisque;
+}
+
+.app-footer-section {
+
+    grid-area: "footer";
+}

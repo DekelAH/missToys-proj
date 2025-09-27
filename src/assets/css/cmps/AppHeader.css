@@ -1,0 +1,37 @@
+.app-header {
+
+    display: grid;
+    grid-template-columns:20% 50% 30%;
+    grid-auto-rows: auto;
+    background-color: lightblue;
+}
+
+h1{
+
+    margin: 0;
+    margin-inline-start: 5%;
+    padding: 0;
+}
+
+nav {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px;
+    justify-content: center;
+    justify-items: center;
+    margin: 0;
+}
+
+.link {
+
+    background-color: beige;
+    width: 90%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.link:hover {
+
+    background-color: darkgoldenrod;
+}
