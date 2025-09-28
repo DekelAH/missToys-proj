@@ -2,18 +2,25 @@
 
 @import './cmps/AppFooter.css';
 @import './cmps/AppHeader.css';
+@import './cmps/ToyPreview.css';
+@import './cmps/ToyList.css';
+
+@import './pages/ToyIndex.css';
+@import './pages/ToyDetails.css';
 
 * {
 
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -26,10 +33,10 @@ a {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-rows: auto 100%;
-    grid-template-areas: 
-    "header"
-    "main"
-    "footer";
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
     gap: 5px;
 }
 

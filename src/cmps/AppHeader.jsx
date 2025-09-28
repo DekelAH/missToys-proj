@@ -8,8 +8,8 @@ export function AppHeader() {
             <h1>Toys Store</h1>
             <nav>
                 <NavLink className='link' to='/'>Home</NavLink>
-                <NavLink className='link' to='/'>Toys</NavLink>
-                <NavLink className='link' to='/'>About</NavLink>
+                <NavLink className='link' to='/toys'>Toys</NavLink>
+                <NavLink className='link' to='/about'>About</NavLink>
             </nav>
             <section className="container">
                 <NavLink to='/'>Login</NavLink>

@@ -41,8 +41,9 @@ async function put(entityType, updatedEntity) {
 }
 
 async function remove(entityType, entityId) {
+
     const entities = await query(entityType)
-    const idx = entities.findIndex(entity => entity.id === entityId)
+    const idx = entities.findIndex(entity => entity._id === entityId)
     if (idx < 0) {
         throw new Error(`Remove failed, cannot find entity with id: ${entityId} in: ${entityType}`)
     }

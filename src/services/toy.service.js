@@ -17,11 +17,10 @@ _createToys()
 
 async function query(filterBy) {
     try {
-        const toys = await storageService.query(STORAGE_KEY)
+        let toys = await storageService.query(STORAGE_KEY)
         if (filterBy) {
             let { name = '' } = filterBy
-            minBatteryStatus = minBatteryStatus || 0
-            toys = toys.filter(toys_1 => toys_1.name.toLowerCase().includes(name.toLowerCase())
+            toys = toys.filter(toys => toys.name.toLowerCase().includes(name.toLowerCase())
             )
         }
         return toys
@@ -36,15 +35,15 @@ function getById(id) {
 }
 
 function remove(id) {
+
     return storageService.remove(STORAGE_KEY, id)
 }
 
-function save(robotToSave) {
-    if (robotToSave.id) {
-        return storageService.put(STORAGE_KEY, robotToSave)
+function save(toyToSave) {
+    if (toyToSave._id) {
+        return storageService.put(STORAGE_KEY, toyToSave)
     } else {
-        robotToSave.isOn = false
-        return storageService.post(STORAGE_KEY, robotToSave)
+        return storageService.post(STORAGE_KEY, toyToSave)
     }
 }
 
@@ -78,7 +77,13 @@ function _createToys() {
             { _id: 't101', name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: Date.now(), inStock: false },
             { _id: 't102', name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: Date.now(), inStock: true },
             { _id: 't103', name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: Date.now(), inStock: true },
-            { _id: 't104', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true }
+            { _id: 't105', name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
+            { _id: 't106', name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
+            { _id: 't107', name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: Date.now(), inStock: true },
+            { _id: 't108', name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: Date.now(), inStock: false },
+            { _id: 't109', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true },
+            { _id: 't110', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: false },
+            { _id: 't111', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true }
         ]
         utilService.saveToStorage(STORAGE_KEY, toys)
     }
