@@ -1,0 +1,10 @@
+.toy-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.toy-details > * {
+    margin-top: 10px;
+}
