@@ -26,7 +26,7 @@ export async function saveToy(toyToSave) {
         const toy = await toyService.save(toyToSave);
         store.dispatch({ type, toy });
     } catch (err) {
-        console.log('Having issues saving robot:', err);
+        console.log('Having issues saving toy:', err);
         throw err;
     }
 }

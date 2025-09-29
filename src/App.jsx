@@ -7,6 +7,7 @@ import { AppFooter } from './cmps/AppFooter.jsx'
 import { ToyIndex } from './pages/ToyIndex.jsx'
 import { Home } from './pages/Home.jsx'
 import { ToyDetails } from './pages/ToyDetails.jsx'
+import { ToyEdit } from './pages/ToyEdit.jsx'
 
 function App() {
 
@@ -17,8 +18,10 @@ function App() {
         <main className="main-section">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/toys" element={<ToyIndex />} />
-            <Route path="/toys/:toyId" element={<ToyDetails />} />
+            <Route path="/toy" element={<ToyIndex />}>
+            </Route>
+            <Route path='/toy/edit/:toyId?' element={<ToyEdit />} />
+            <Route path="/toy/:toyId" element={<ToyDetails />} />
           </Routes>
         </main>
         <AppFooter className="app-footer-section" />

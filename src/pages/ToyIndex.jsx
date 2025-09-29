@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { useSearchParams } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { toyService } from "../services/toy.service"
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service"
 import { loadToys, removeToy, setFilterBy } from "../store/toy/toy.actions"
@@ -48,7 +48,7 @@ export function ToyIndex() {
             <section className="filter-add-section">
                 <ToyFilter onSetFilterBy={onSetFilterBy} filterBy={filterBy} />
                 <div>
-                    <button>Add Toy</button>
+                    <button><Link to={'/toy/edit'}>Add Toy</Link></button>
                 </div>
             </section>
             <ToyList toys={toys} onRemoveToy={onRemoveToy} />

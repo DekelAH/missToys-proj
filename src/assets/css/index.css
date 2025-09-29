@@ -7,6 +7,7 @@
 
 @import './pages/ToyIndex.css';
 @import './pages/ToyDetails.css';
+@import './pages/ToyEdit.css';
 
 * {
 

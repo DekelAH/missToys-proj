@@ -47,11 +47,10 @@ function save(toyToSave) {
     }
 }
 
-function createToy(model = '', type = '', batteryStatus = 100) {
+function createToy(name = '', price = 0) {
     return {
-        model,
-        batteryStatus,
-        type
+        name,
+        price
     }
 }
 
