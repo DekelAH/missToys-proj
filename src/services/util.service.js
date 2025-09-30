@@ -4,7 +4,8 @@ export const utilService = {
     saveToStorage,
     loadFromStorage,
     debounce,
-    animateCSS
+    animateCSS,
+    getTimeStamp
 }
 
 function makeId(length = 5) {
@@ -67,6 +68,26 @@ export function getExistingProperties(obj) {
         }
     }
     return truthyObj
+}
+
+function getTimeStamp() {
+
+    const now = new Date();
+
+    // Define options for the desired format
+    const options = {
+        weekday: 'short', // "Monday", "Tuesday", etc.
+        year: 'numeric', // "2025"
+        month: 'short',   // "September", "October", etc.
+        day: 'numeric',  // "30"
+        hour: '2-digit', // "09", "10", etc.
+        minute: '2-digit', // "31", "05", etc.
+        second: '2-digit', // "00", "15", etc.
+    };
+
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    const formatedDate = formatter.format(now)
+    return formatedDate
 }
 
 

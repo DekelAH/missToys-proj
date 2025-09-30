@@ -8,6 +8,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 export function ToyEdit() {
 
     const [toy, setToy] = useState(toyService.createToy())
+    const [labelValue, setLabelValue] = useState('')
 
     const navigate = useNavigate()
     const { toyId } = useParams()
@@ -55,8 +56,7 @@ export function ToyEdit() {
             })
     }
 
-    const { name, price,  } = toy
-
+    const { name, price, labels, createdAt, inStock } = toy
     return (
         <section className="toy-edit">
             <Link to="/toy"><button className="close-btn">X</button></Link>
@@ -66,6 +66,18 @@ export function ToyEdit() {
                 <input onChange={handleChange} value={name} type="text" id="name" name="name" />
                 <label htmlFor="name">Price</label>
                 <input onChange={handleChange} value={price} type="number" id="price" name="price" />
+                <label htmlFor="labels">Labels</label>
+                <input onChange={(e) => setLabelValue(e.target.value)} value={labelValue} type="text" id="label" placeholder="add label" />
+                <label onClick={() => { labels.push(labelValue) }}>Add Label</label>
+                <ul id="labels" name="labels" >
+                    {labels &&
+                        labels.map((renderedLabel, index) => (
+                            <li key={index}>{renderedLabel}</li>
+                        ))
+                    }
+                </ul>
+                <label htmlFor="inStock">inStock : </label>
+                <input type="checkbox" name="inStock" id="inStock" checked={inStock} onChange={handleChange} />
                 <section className="btns">
                     <button className="btn">Save</button>
                 </section>

@@ -47,10 +47,12 @@ function save(toyToSave) {
     }
 }
 
-function createToy(name = '', price = 0) {
+function createToy(name = '', price = 0, labels = [], inStock = true) {
     return {
         name,
-        price
+        price,
+        labels,
+        inStock
     }
 }
 
@@ -69,20 +71,22 @@ function getFilterFromSearchParams(searchParams) {
     return filterBy
 }
 
+
+
 function _createToys() {
     let toys = utilService.loadFromStorage(STORAGE_KEY)
     if (!toys || !toys.length) {
         toys = [
-            { _id: 't101', name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: Date.now(), inStock: false },
-            { _id: 't102', name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: Date.now(), inStock: true },
-            { _id: 't103', name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: Date.now(), inStock: true },
-            { _id: 't105', name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
-            { _id: 't106', name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
-            { _id: 't107', name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: Date.now(), inStock: true },
-            { _id: 't108', name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: Date.now(), inStock: false },
-            { _id: 't109', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true },
-            { _id: 't110', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: false },
-            { _id: 't111', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true }
+            { _id: 't101', name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: utilService.getTimeStamp(), inStock: false },
+            { _id: 't102', name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't103', name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't105', name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't106', name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't107', name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't108', name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: utilService.getTimeStamp(), inStock: false },
+            { _id: 't109', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: true },
+            { _id: 't110', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: false },
+            { _id: 't111', name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: true }
         ]
         utilService.saveToStorage(STORAGE_KEY, toys)
     }

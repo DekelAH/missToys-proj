@@ -22,11 +22,17 @@ export function ToyDetails() {
             })
     }
 
+
     if (!toy) return <div>Loading...</div>
     return (
         <section className="toy-details">
             <h2>{toy.name}</h2>
             <h4>Price: <label>{toy.price}</label></h4>
+            <h4>Labels: {toy.labels.map((label) =>
+                <label key={label}>{label}, </label>
+            )}</h4>
+            <h4>Created At: <label>{toy.createdAt}</label></h4>
+            <h4>In Stock: <label>{toy.inStock}</label></h4>
             <button><Link to="/toy">Back</Link></button>
         </section>
     )
