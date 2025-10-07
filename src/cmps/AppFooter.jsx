@@ -1,9 +1,7 @@
 export function AppFooter() {
-
     return (
-
-        <section className="app-footer-container">
-            <h1>Hello From AppFooter</h1>
-        </section>
+        <footer className="app-footer">
+            <p>MissToys © 2024</p>
+        </footer>
     )
 }
