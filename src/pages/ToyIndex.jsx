@@ -7,9 +7,9 @@ import { debounce, getExistingProperties } from "../services/util.service"
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service"
 import { loadToys, removeToy, setFilterBy, setOrderBy } from "../store/toy/toy.actions"
 
-import { ToyList } from "../cmps/ToyList"
-import { ToyFilter } from "../cmps/ToyFIlter"
-import { ToySortBy } from "../cmps/ToySortBy"
+import { ToyList } from "../cmps/ToyList.jsx"
+import { ToyFilter } from "../cmps/ToyFilter.jsx"
+import { ToySortBy } from "../cmps/ToySortBy.jsx"
 
 
 
@@ -53,18 +53,20 @@ export function ToyIndex() {
             });
     }
 
-    return (
-
-        <section className="toy-index">
+    return <>
+        <section className="full main-layout">
             <section className="filter-add-section">
                 <ToyFilter onSetFilterBy={debounce(onSetFilterBy, 500)} filterBy={filterBy} />
                 <ToySortBy onSetOrderBy={debounce(onSetOrderBy, 500)} />
-                <div>
+                <div className="add-toy-btn">
                     <button><Link to={'/toy/edit'}>Add Toy</Link></button>
                 </div>
             </section>
             <ToyList toys={toys} onRemoveToy={onRemoveToy} />
             <Outlet />
         </section>
-    )
+    </>
+
+
+
 }

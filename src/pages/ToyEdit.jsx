@@ -71,17 +71,21 @@ export function ToyEdit() {
             <Link to="/toy"><button className="close-btn">X</button></Link>
             <h1>{toyId ? 'Edit' : 'Add'} Toy</h1>
             <form onSubmit={onSubmitToy}>
-                <label htmlFor="name">Name</label>
-                <input onChange={handleChange} value={name} type="text" id="name" name="name" />
-                <label htmlFor="name">Price</label>
-                <input onChange={handleChange} value={price} type="number" id="price" name="price" />
+                <div className="toy-input">
+                    <label htmlFor="name">Name</label>
+                    <input onChange={handleChange} value={name} type="text" id="name" name="name" />
+                </div>
+                <div className="toy-input">
+                    <label htmlFor="price">Price</label>
+                    <input onChange={handleChange} value={price} type="number" id="price" name="price" />
+                </div>
                 <label htmlFor="labels">Labels</label>
                 <div className="labels">
                     {labels &&
                         allLabels.map(label => (
                             <div key={label} className="label">
-                                <label>{label}</label>
                                 <input onChange={handleLabelChange} type="checkbox" name={label} checked={((labels.indexOf(label)) > -1)} />
+                                <label>{label}</label>
                             </div>
                         ))
                     }

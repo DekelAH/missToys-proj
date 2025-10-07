@@ -23,9 +23,6 @@ export async function loadToys() {
 
 export function loadToy() {
     toyService.getById(toyId)
-        .then((toy) => {
-            setToy(toy)
-        })
         .catch((error) => {
             console.error('error:', error)
         })

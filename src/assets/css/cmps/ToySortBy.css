@@ -1,0 +1,41 @@
+.order-by-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.order-by-section select {
+    width: 100%;
+    height: 2.5em;
+    border: 1px solid var(--cp1000, #ccc);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #222;
+    background: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .order-by-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0.75rem 0.5rem;
+    }
+    .order-by-section select {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* Mobile: tighter spacing */
+@media (max-width: 600px) {
+    .order-by-section {
+        gap: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

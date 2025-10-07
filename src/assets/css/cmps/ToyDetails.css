@@ -1,0 +1,30 @@
+.toy-details {
+ 	padding: 10px;
+ 	border: 1px solid #ccc;
+ 	border-radius: 5px;
+ 	background-color: #f9f9f9;
+ 	max-width: 400px;
+ 	margin: 20px auto;
+    text-align: center;
+ }
+
+ .toy-details h2 {
+ 	margin-bottom: 10px;
+ }
+
+ .toy-details p {
+ 	margin: 5px 0;
+ }
+
+ .toy-details .price {
+ 	font-weight: bold;
+ 	color: #2c3e50;
+ }
+
+ .toy-details .in-stock {
+ 	color: green;
+ }
+
+ .toy-details .out-of-stock {
+ 	color: red;
+ }

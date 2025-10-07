@@ -1,7 +1,8 @@
 export function Home() {
 
-    return (
+    return <>
+        <h1>Wellcome To Toy Store!</h1>
+    </>
 
-        <h1>Hello From Home</h1>
-    )
+
 }

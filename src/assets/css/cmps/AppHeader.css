@@ -1,37 +1,55 @@
-.app-header {
+.app-header-section {
 
+    padding-inline: 20px;
     display: grid;
-    grid-template-columns:20% 50% 30%;
-    grid-auto-rows: auto;
-    background-color: lightblue;
+    grid-auto-flow: column;
+    place-content: center space-between;
+    background-color: var(--cp1000);
 }
 
-h1{
+.nav-header {
 
-    margin: 0;
-    margin-inline-start: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    place-content: center;
+    gap: 50px;
+}
+
+.logo {
+
     padding: 0;
-}
-
-nav {
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px;
-    justify-content: center;
-    justify-items: center;
     margin: 0;
+    color: var(--cp2000);
+    font-family: chicle;
+    font-size: 2.85714em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .link {
 
-    background-color: beige;
-    width: 90%;
+    width: 100px;
     text-align: center;
-    line-height: 50px;
+    font-family: chicle;
+    text-transform: uppercase;
+    color: var(--cp2000);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    letter-spacing: 2px;
 }
 
 .link:hover {
 
-    background-color: darkgoldenrod;
+    color: var(--cp3000);
+    border-radius: 50%;
+    border-bottom: 2px solid var(--cp2000);
+    cursor: pointer;
+}
+
+a.active {
+
+    color: var(--cp3000);
+    border-radius: 50%;
+    border-bottom: 2px solid var(--cp2000);
 }

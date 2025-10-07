@@ -1,61 +1,19 @@
-/* Components */
+/* Setup */
+@import url('./setup/vars.css');
+@import url('./setup/typography.css');
 
-@import './cmps/AppFooter.css';
-@import './cmps/AppHeader.css';
-@import './cmps/ToyPreview.css';
-@import './cmps/ToyList.css';
-@import './cmps/ToySortBy.css';
+/* Basics */
+@import url('./basics/base.css');
+@import url('./basics/helpers.css');
+@import url('./basics/layout.css');
 
-/* Pages */
+/* Cmps */
+@import url('./cmps/AppHeader.css');
+@import url('./cmps/ToyIndex.css');
+@import url('./cmps/ToyFilter.css');
+@import url('./cmps/ToySortBy.css');
+@import url('./cmps/ToyPreview.css');
+@import url('./cmps/ToyList.css');
+@import url('./cmps/ToyDetails.css');
+@import url('./cmps/ToyEdit.css');
 
-@import './pages/ToyIndex.css';
-@import './pages/ToyDetails.css';
-@import './pages/ToyEdit.css';
-
-* {
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Edu VIC WA NT Beginner', cursive;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-}
-
-a {
-
-    text-decoration: none;
-}
-
-.grid-container {
-
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-rows: auto 100%;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    gap: 5px;
-}
-
-.app-header-section {
-
-    grid-area: "header";
-}
-
-.main-section {
-
-    grid-area: "main";
-    background-color: bisque;
-}
-
-.app-footer-section {
-
-    grid-area: "footer";
-}

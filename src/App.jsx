@@ -8,16 +8,18 @@ import { ToyIndex } from './pages/ToyIndex.jsx'
 import { Home } from './pages/Home.jsx'
 import { ToyDetails } from './pages/ToyDetails.jsx'
 import { ToyEdit } from './pages/ToyEdit.jsx'
+import { About } from './pages/About.jsx'
 
 function App() {
 
   return <>
     <Router>
-      <section className="grid-container">
+      <section className="app main-layout">
         <AppHeader className="app-header-section" />
         <main className="main-section">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/toy" element={<ToyIndex />}>
               <Route path='/toy/edit/:toyId?' element={<ToyEdit />} />
             </Route>

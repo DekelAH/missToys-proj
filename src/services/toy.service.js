@@ -12,7 +12,7 @@ export const toyService = {
     getLabels
 }
 
-const STORAGE_KEY = 'toys'
+const STORAGE_KEY = 'toysDB'
 const labels = ['Doll', 'Battery Powered', 'Baby', 'On wheels', 'Box game', 'Art', 'Puzzle', 'Outdoor']
 _createToys()
 
@@ -45,13 +45,14 @@ async function query(filterBy, orderBy = { field: 'name', direction: 1 }) {
             }
 
         }
-
-        toys.sort((a, b) => {
-            const { field, direction } = orderBy
-            if (a[field] < b[field]) return -1 * direction
-            if (a[field] > b[field]) return 1 * direction
-            return 0
-        })
+        if (orderBy) {
+            toys.sort((a, b) => {
+                const { field, direction } = orderBy
+                if (a[field] < b[field]) return -1 * direction
+                if (a[field] > b[field]) return 1 * direction
+                return 0
+            })
+        }
 
         return toys
 
@@ -74,6 +75,8 @@ function save(toyToSave) {
     if (toyToSave._id) {
         return storageService.put(STORAGE_KEY, toyToSave)
     } else {
+
+        toyToSave.createdAt = Date.now()
         return storageService.post(STORAGE_KEY, toyToSave)
     }
 }
@@ -115,16 +118,16 @@ function _createToys() {
     let toys = utilService.loadFromStorage(STORAGE_KEY)
     if (!toys || !toys.length) {
         toys = [
-            { _id: utilService.makeId(), name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: utilService.getTimeStamp(), inStock: false },
-            { _id: utilService.makeId(), name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: utilService.getTimeStamp(), inStock: false },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: true },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: false },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: utilService.getTimeStamp(), inStock: true }
+            { _id: utilService.makeId(), name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: Date.now(), inStock: false },
+            { _id: utilService.makeId(), name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: Date.now(), inStock: false },
+            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: false },
+            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true }
         ]
         utilService.saveToStorage(STORAGE_KEY, toys)
     }

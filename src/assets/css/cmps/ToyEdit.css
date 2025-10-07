@@ -1,0 +1,54 @@
+.toy-edit {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top:10%;
+    right:40%;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 400px;
+    box-shadow:
+        0 0 0 100vmax rgba(0, 0, 0, 0.5),
+        -3px 1px 28px #00000043;
+}
+
+.labels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    max-height: 150px;
+    overflow-y: hidden;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.toy-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.toy-edit .close-btn {
+    position: absolute;
+    top: -1em;
+    right: -1em;
+}
+
+.toy-edit form button {
+    width: 100%;
+    margin-top: 40px;
+    align-self: center;
+    color: white;
+}
+
+input[type="text"],
+input[type="number"] {
+
+    height: 0%;
+}

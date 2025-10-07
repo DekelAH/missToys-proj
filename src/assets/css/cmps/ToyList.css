@@ -1,8 +1,17 @@
 .toy-list {
 
     display: grid;
-    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
     gap: 10px;
     place-items: center;
     list-style-type: none;
 }
+
+.toy-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+    

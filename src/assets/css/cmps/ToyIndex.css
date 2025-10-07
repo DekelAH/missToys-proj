@@ -1,0 +1,52 @@
+.toy-index {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+    min-height: 100vh;
+    background: #f9f9f9;
+}
+
+.filter-add-section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.5rem;
+    align-items: center;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.add-toy-btn {
+    justify-self: end;
+    align-self: start;
+}
+
+
+
+@media (max-width: 900px) {
+    .filter-add-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .add-toy-btn {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .toy-index {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    .filter-add-section {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 0.5rem;
+    }
+    .add-toy-btn {
+        justify-self: stretch;
+    }
+}

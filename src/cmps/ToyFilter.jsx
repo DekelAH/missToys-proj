@@ -40,28 +40,34 @@ export function ToyFilter({ onSetFilterBy, filterBy }) {
 
     const { name, inStock, labels } = filterByToEdit
     const allLabels = getAllLabels()
-    return (
+    return <>
         <section className="toy-filter">
-            <h2>Filter Toys</h2>
-            <form>
-                <input value={name} onChange={handleChange} type="search" placeholder="By Name" id="name" name="name" />
-                <label htmlFor="inStock">Toy Stock</label>
-                <select value={inStock} onChange={handleChange} id="inStock" name="inStock">
-                    <option value={undefined}>All</option>
-                    <option value={true}>In Stock</option>
-                    <option value={false}>Out of Stock</option>
-                </select>
-                <label>Labels</label>
-                {labels &&
-                    allLabels.map(label => (
-                        <div key={label} className="label">
-                            <label>{label}</label>
-                            <input onChange={handleLabelChange} type="checkbox" name={label} checked={((labels.indexOf(label)) !== -1)} />
-                        </div>
-                    ))
-                }
-                <button hidden>Set Filter</button>
+            <form className="filter-row">
+                <div className="inputs">
+                    <label htmlFor="name">Name
+                        <input value={name} onChange={handleChange} type="search" placeholder="Enter Toy Name..." id="name" name="name" />
+                    </label>
+                    <label htmlFor="inStock">Toy Stock
+                        <select value={inStock} onChange={handleChange} id="inStock" name="inStock">
+                            <option value={undefined}>All</option>
+                            <option value={true}>In Stock</option>
+                            <option value={false}>Out of Stock</option>
+                        </select>
+                    </label>
+                </div>
+                <div className="labels-checkboxes">
+                    <div className="labels-grid">
+                        {labels &&
+                            allLabels.map(label => (
+                                <div key={label} className="flex">
+                                    <input onChange={handleLabelChange} type="checkbox" name={label} checked={((labels.indexOf(label)) !== -1)} />
+                                    <h5 htmlFor="label">{label}</h5>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </form>
         </section>
-    )
+    </>
 }

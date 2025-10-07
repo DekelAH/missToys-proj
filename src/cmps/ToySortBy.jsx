@@ -13,9 +13,9 @@ export function ToySortBy({ onSetOrderBy }) {
 
     return <>
 
-        <div className="order-by-select">
-            <h3 htmlFor="order-by">Sort by:</h3>
+        <div className="order-by-section">
             <select name="order-by" id="order-by" onChange={handleChange}>
+                <option>Sorting Options</option>
                 <option value="name,1">Name - ascending</option>
                 <option value="name,-1">Name - descending</option>
                 <option value="price,1">Price - ascending</option>
