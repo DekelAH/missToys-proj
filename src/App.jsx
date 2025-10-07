@@ -11,7 +11,7 @@ import { ToyEdit } from './pages/ToyEdit.jsx'
 
 function App() {
 
-  return (
+  return <>
     <Router>
       <section className="grid-container">
         <AppHeader className="app-header-section" />
@@ -19,15 +19,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/toy" element={<ToyIndex />}>
+              <Route path='/toy/edit/:toyId?' element={<ToyEdit />} />
             </Route>
-            <Route path='/toy/edit/:toyId?' element={<ToyEdit />} />
             <Route path="/toy/:toyId" element={<ToyDetails />} />
           </Routes>
         </main>
         <AppFooter className="app-footer-section" />
       </section>
     </Router>
-  )
+  </>
 }
 
 export default App

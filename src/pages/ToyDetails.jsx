@@ -32,7 +32,7 @@ export function ToyDetails() {
                 <label key={label}>{label}, </label>
             )}</h4>
             <h4>Created At: <label>{toy.createdAt}</label></h4>
-            <h4>In Stock: <label>{toy.inStock}</label></h4>
+            <h4>In Stock: <label>{toy.inStock ? 'Yes' : 'No'}</label></h4>
             <button><Link to="/toy">Back</Link></button>
         </section>
     )

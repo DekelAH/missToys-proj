@@ -5,7 +5,8 @@ export const utilService = {
     loadFromStorage,
     debounce,
     animateCSS,
-    getTimeStamp
+    getTimeStamp,
+    getExistingProperties
 }
 
 function makeId(length = 5) {
