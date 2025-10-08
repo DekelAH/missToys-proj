@@ -1,6 +1,6 @@
 .toy-edit {
     position: absolute;
-    left: 70%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -54,4 +54,39 @@ input[type="text"],
 input[type="number"] {
 
     height: 0%;
+}
+
+
+@media (max-width: 700px) {
+    .toy-edit {
+
+        position: absolute;
+        left: 70%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .toy-edit .close-btn {
+        position: absolute;
+        top: 0em;
+        right: 0em;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .toy-edit {
+
+        position: absolute;
+        left: 70%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .toy-edit .close-btn {
+        position: absolute;
+        top: 0em;
+        right: 0em;
+    }
+
 }
