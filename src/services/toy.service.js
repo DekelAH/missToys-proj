@@ -121,13 +121,17 @@ function _createToys() {
             { _id: utilService.makeId(), name: 'Talking Doll', price: 100, labels: ['Doll', 'Battery Powered', 'Baby'], createdAt: Date.now(), inStock: false },
             { _id: utilService.makeId(), name: 'Remote Car', price: 150, labels: ['Outdoor', 'Battery Powered', 'On wheels'], createdAt: Date.now(), inStock: true },
             { _id: utilService.makeId(), name: 'Harry Potter Puzzle', price: 180, labels: ['Puzzle', 'Box game'], createdAt: Date.now(), inStock: true },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Lego Plane', price: 130, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
             { _id: utilService.makeId(), name: 'Lego Tank', price: 110, labels: ['Puzzle'], createdAt: Date.now(), inStock: true },
             { _id: utilService.makeId(), name: 'Action Soldier', price: 40, labels: ['Doll'], createdAt: Date.now(), inStock: true },
             { _id: utilService.makeId(), name: 'Fisher Price', price: 172, labels: ['Baby'], createdAt: Date.now(), inStock: false },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: false },
-            { _id: utilService.makeId(), name: 'Lego Plane', price: 120, labels: ['Box game', 'Art'], createdAt: Date.now(), inStock: true }
+            { _id: utilService.makeId(), name: 'Yoyo', price: 14, labels: ['Outdoor'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Remote Helicopter', price: 320, labels: ['Battery Powered', 'Outdoor'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Water Gun', price: 120, labels: ['Outdoor'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Baby Bicycle', price: 192, labels: ['Baby', 'Outdoor'], createdAt: Date.now(), inStock: false },
+            { _id: utilService.makeId(), name: 'Sonic Doll', price: 143, labels: ['Doll', 'Battery Powered'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Sniffer Minecraft Doll', price: 20, labels: ['Doll'], createdAt: Date.now(), inStock: true },
+            { _id: utilService.makeId(), name: 'Water Gun', price: 120, labels: ['Outdoor'], createdAt: Date.now(), inStock: true }
         ]
         utilService.saveToStorage(STORAGE_KEY, toys)
     }
