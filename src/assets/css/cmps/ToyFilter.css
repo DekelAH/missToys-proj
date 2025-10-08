@@ -10,6 +10,12 @@
     width: 100%;
 }
 
+label {
+
+    display: flex;
+    justify-content: space-between;
+}
+
 .inputs {
     display: flex;
     flex-direction: column;
@@ -57,16 +63,19 @@
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
     .labels-checkboxes {
         grid-template-columns: 1fr;
         margin-top: 0.5rem;
         padding: 0.75rem 0.5rem;
     }
+
     .labels-checkboxes h4 {
         writing-mode: horizontal-tb;
         text-align: left;
         margin-bottom: 0.5rem;
     }
+
     .labels-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.5rem;
@@ -77,12 +86,15 @@
     .toy-filter {
         padding: 0.5rem;
     }
+
     .filter-row {
         gap: 0.75rem;
     }
+
     .labels-checkboxes {
         padding: 0.5rem;
     }
+
     .labels-grid {
         grid-template-columns: 1fr;
         gap: 0.5rem;
