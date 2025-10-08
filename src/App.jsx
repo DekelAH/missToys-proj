@@ -16,7 +16,7 @@ function App() {
     <Router>
       <section className="app main-layout">
         <AppHeader className="app-header-section" />
-        <main className="main-section">
+        <main className="main-section app">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
